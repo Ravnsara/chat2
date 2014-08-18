@@ -1,0 +1,75 @@
+<html>
+<head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+		#input
+		{
+			position: absolute;
+			width: 80%;
+			bottom: 10%;
+			margin-right: 10%;
+			margin-left: 10%;
+		}
+		#output
+		{
+			width: 80%;
+			margin-right: 10%;
+			margin-left: 10%;
+			border: none;
+			height: 70%;
+			resize: none;
+		}
+		#output:focus
+		{
+			outline: none;
+		}	
+		#logoutButton
+		{
+			position: fixed;
+			top: 40px;
+			right: 10px;
+		}
+		#loggedInAs
+		{
+			position: fixed;
+			top: 10px;
+			right: 10px;
+		}
+		#userPanel
+		{
+			position: fixed;
+			left: 0px;
+			top: 20px;
+			width:10%;
+		}
+	</style>
+</head>
+<body>
+	<div id="loggedInAs"></div>
+	<button id="logoutButton" class="btn btn-danger" 
+		onclick="logout()">Log Out</button>
+	<div id="userPanel">
+		Active Users:
+		<div id="users"></div>
+	</div>
+		
+	<div id="output" readonly="readonly"></div>
+	<input id="input" class="form-control" rows="3"></input>
+
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+		<div class="modal-content">
+		  Please login: <br>
+		  <input id="username" placeholder="Username"></input>&nbsp;
+		  <button class="btn btn-primary" onclick="login()">Log In</button>
+		</div>
+	  </div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!--<script src="ba-emotify.min.js"></script>
+	<script src="emotify.js"></script>-->
+	<script src="app.js"></script>
+</body>
+</html>
